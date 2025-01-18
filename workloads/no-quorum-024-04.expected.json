@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 0
+    },
+    "attempted": {
+      "equals": 24
+    },
+    "committed_keys": {
+      "equals": 0
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    }
+  },
+  "rationale": "Reject acknowledgments when the leader cannot reach a majority.",
+  "synthetic": true
+}
