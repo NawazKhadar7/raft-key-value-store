@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 1
+    },
+    "attempted": {
+      "equals": 1
+    },
+    "committed_keys": {
+      "equals": 1
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    },
+    "leader_term": {
+      "min": 1
+    },
+    "rejected": {
+      "equals": 0
+    }
+  },
+  "rationale": "The two remaining nodes form a majority.",
+  "synthetic": true
+}
