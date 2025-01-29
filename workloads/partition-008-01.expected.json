@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 8
+    },
+    "attempted": {
+      "equals": 8
+    },
+    "committed_keys": {
+      "equals": 8
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    }
+  },
+  "rationale": "Keep a two-node majority while one node is partitioned.",
+  "synthetic": true
+}
