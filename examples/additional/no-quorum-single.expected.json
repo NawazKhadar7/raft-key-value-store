@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 0
+    },
+    "attempted": {
+      "equals": 1
+    },
+    "committed_keys": {
+      "equals": 0
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    },
+    "leader_term": {
+      "min": 1
+    },
+    "rejected": {
+      "equals": 1
+    }
+  },
+  "rationale": "No write may be acknowledged or committed without a majority.",
+  "synthetic": true
+}
