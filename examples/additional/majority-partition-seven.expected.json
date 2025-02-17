@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 7
+    },
+    "attempted": {
+      "equals": 7
+    },
+    "committed_keys": {
+      "equals": 7
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    },
+    "leader_term": {
+      "min": 1
+    },
+    "rejected": {
+      "equals": 0
+    }
+  },
+  "rationale": "Healing must preserve the committed prefix.",
+  "synthetic": true
+}
