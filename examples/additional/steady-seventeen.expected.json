@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 17
+    },
+    "attempted": {
+      "equals": 17
+    },
+    "committed_keys": {
+      "equals": 17
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    },
+    "leader_term": {
+      "min": 1
+    },
+    "rejected": {
+      "equals": 0
+    }
+  },
+  "rationale": "An odd-sized longer log preserves the full acknowledged prefix.",
+  "synthetic": true
+}
