@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 3
+    },
+    "attempted": {
+      "equals": 3
+    },
+    "committed_keys": {
+      "equals": 3
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    },
+    "leader_term": {
+      "min": 1
+    },
+    "rejected": {
+      "equals": 0
+    }
+  },
+  "rationale": "Both configurations must satisfy the joint-quorum predicate.",
+  "synthetic": true
+}
