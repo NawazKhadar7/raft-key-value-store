@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 12
+    },
+    "attempted": {
+      "equals": 12
+    },
+    "committed_keys": {
+      "equals": 12
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    }
+  },
+  "rationale": "Check both old and new majorities for a joint configuration.",
+  "synthetic": true
+}
