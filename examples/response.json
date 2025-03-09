@@ -1,0 +1,37 @@
+{
+  "metrics": {
+    "acknowledged": 8,
+    "attempted": 8,
+    "committed_keys": 8,
+    "committed_prefix_safe": true,
+    "joint_quorum_rule": true,
+    "leader_term": 1,
+    "rejected": 0
+  },
+  "output": {
+    "leader": 0,
+    "nodes": [
+      {
+        "alive": true,
+        "commit": 8,
+        "id": 0,
+        "keys": 8,
+        "term": 1
+      },
+      {
+        "alive": true,
+        "commit": 8,
+        "id": 1,
+        "keys": 8,
+        "term": 1
+      },
+      {
+        "alive": true,
+        "commit": 8,
+        "id": 2,
+        "keys": 8,
+        "term": 1
+      }
+    ]
+  }
+}
