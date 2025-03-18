@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 32
+    },
+    "attempted": {
+      "equals": 32
+    },
+    "committed_keys": {
+      "equals": 32
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    }
+  },
+  "rationale": "Continue with a majority while one follower is down.",
+  "synthetic": true
+}
