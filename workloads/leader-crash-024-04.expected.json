@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 24
+    },
+    "attempted": {
+      "equals": 24
+    },
+    "committed_keys": {
+      "equals": 24
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    }
+  },
+  "rationale": "Elect a surviving leader after a committed prefix.",
+  "synthetic": true
+}
