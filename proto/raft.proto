@@ -1,0 +1,8 @@
+syntax = "proto3";
+package syslab.raft;
+message VoteRequest { uint64 term=1; uint32 candidate=2; uint64 last_index=3; uint64 last_term=4; }
+message VoteReply { uint64 term=1; bool granted=2; }
+message Entry { uint64 term=1; string key=2; string value_json=3; }
+message AppendRequest { uint64 term=1; uint32 leader=2; uint64 previous=3; uint64 previous_term=4; repeated Entry entries=5; uint64 leader_commit=6; }
+message AppendReply { uint64 term=1; bool success=2; }
+service Consensus { rpc Vote(VoteRequest) returns (VoteReply); rpc Append(AppendRequest) returns (AppendReply); }
