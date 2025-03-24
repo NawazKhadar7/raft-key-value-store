@@ -1,0 +1,13 @@
+{
+  "full_dynamic_membership_implemented": false,
+  "initial_voters": [
+    0,
+    1,
+    2
+  ],
+  "joint_example_new_voters": [
+    1,
+    2,
+    3
+  ]
+}
