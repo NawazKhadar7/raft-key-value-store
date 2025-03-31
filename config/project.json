@@ -1,0 +1,47 @@
+{
+  "algorithm": "Raft election compares last term then log length. Followers accept AppendEntries only after a matching prefix. Leaders advance commit for entries in their current term with a majority. Reference: https://raft.github.io/raft.pdf .",
+  "architecture": "Cluster simulator \u2192 typed method RPCs \u2192 persistent Node state \u2192 committed KV application. Blocked links represent partitions. RPC protocol schema is included for a future transport.",
+  "data_model": "Node = term, voted_for, log, commit, applied, role, KV. Log entry = term and optional put command. Index zero is a sentinel.",
+  "description": "A deterministic single-host Raft reference that makes election, replication and partition safety directly inspectable.",
+  "design": "Never acknowledge an entry before majority commit. Do not truncate committed prefixes. Keep volatile commit state separate from persistent term, vote and log; a restarted follower learns commit from its leader.",
+  "families": [
+    "steady",
+    "follower-crash",
+    "leader-crash",
+    "partition",
+    "no-quorum",
+    "membership"
+  ],
+  "family_notes": [
+    "Commit writes with all three voters available.",
+    "Continue with a majority while one follower is down.",
+    "Elect a surviving leader after a committed prefix.",
+    "Keep a two-node majority while one node is partitioned.",
+    "Reject acknowledgments when the leader cannot reach a majority.",
+    "Check both old and new majorities for a joint configuration."
+  ],
+  "file_count": 165,
+  "limitations": "The transport is in-process and deterministic, not a high-concurrency Go/C++ service. There are no real election timers, gRPC server, snapshots, linearizable reads or complete membership-change protocol. The membership workload checks the joint quorum rule only; configuration entries and transition finalization are not implemented. Crash simulation toggles availability, while persistent node restart is checked separately.",
+  "numpy": false,
+  "operations": "Run deterministic failures and inspect each node. Adding network concurrency requires serialized state transitions, deadlines, randomized election timers and a documented read protocol.",
+  "scope": "Vote freshness, persistent term/vote/log state, matching-prefix append RPCs, conflict truncation, current-term majority commits, committed state-machine application, crash/partition simulation and a joint-quorum predicate.",
+  "security": "Treat this as educational code; review it before handling trusted data.",
+  "sizes": [
+    8,
+    12,
+    16,
+    24,
+    32,
+    48
+  ],
+  "slug": "raft-key-value-store",
+  "title": "Key-Value Store with Raft Consensus",
+  "topics": [
+    "raft",
+    "distributed-systems",
+    "consensus",
+    "key-value-store",
+    "fault-tolerance"
+  ],
+  "workload_count": 36
+}
