@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "acknowledged": {
+      "equals": 12
+    },
+    "attempted": {
+      "equals": 12
+    },
+    "committed_keys": {
+      "equals": 12
+    },
+    "committed_prefix_safe": {
+      "equals": true
+    },
+    "joint_quorum_rule": {
+      "equals": true
+    }
+  },
+  "rationale": "Commit writes with all three voters available.",
+  "synthetic": true
+}
